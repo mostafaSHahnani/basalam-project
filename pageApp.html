@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./pageAppstyle.css" />
+    <title>دانلوداپ | باسلام</title>
+  </head>
+  <body>
+    <!-- start navbar -->
+    <div class="container-fluid border-container">
+      <ul class="nav pt-4">
+        <a class="navbar-brand" href="#"
+          ><img
+            class="img-logo"
+            src="./images/basalam-logotype.34a414e.svg"
+            alt="logo..."
+        /></a>
+        <form class="form-content ml-auto">
+          <button class="btn btn-search" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+          <input
+            class="input-search"
+            type="text"
+            placeholder="جستجو در بازار"
+          />
+        </form>
+        <li class="nav-item link-menu-head">
+          <i class="fa fa-user-o icon-nav-menu"></i>
+          <a class="nav-link link-nav-style" href="login.html">
+            ورود / ثبت‌نام</a
+          >
+        </li>
+        <li class="nav-item link-menu-head">
+          <i class="fa fa-shopping-bag icon-nav-menu"></i>
+          <a onclick="openNav()" class="nav-link openbtn" href="#"> سبد خرید</a>
+          <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+              >×</a
+            >
+            <a class="sidebar-head-line" href="#"
+              >شما این محصولات انتخاب کرده اید.</a
+            >
+            <div id="shopping-cart" class="px-2">
+              <table id="cart-content" class="table table-style">
+                <thead class="t-header">
+                  <tr>
+                    <th>تصویر</th>
+                    <th>محصول</th>
+                    <th>قیمت</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <a
+                href="#"
+                id="clear-cart"
+                class="btn btn-danger btn-block none-btn-sidebar"
+                >پاک کردن</a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav">
+        <li class="nav-item" id="content">
+          <a class="nav-link link-nav-mega" href="#"
+            ><i class="fa fa-navicon"></i> دسته‌بندی‌ها</a
+          >
+          <div class="container-fluid" id="content-list">
+            <div class="row row-content-style">
+              <div class="col-6 col-sm-3">
+                <div
+                  class="nav flex-column nav-pills"
+                  id="v-pills-tab"
+                  role="tablist"
+                  aria-orientation="vertical"
+                >
+                  <a
+                    class="tab-btn"
+                    id="v-pills-home-tab"
+                    data-toggle="pill"
+                    href="#v-pills-home"
+                    role="tab"
+                    aria-controls="v-pills-home"
+                    aria-selected="true"
+                    ><img
+                      class="img-icon"
+                      src="./images/a1.svg"
+                      alt="image..."
+                    />
+                    مواد غذایی
+                    <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a
+                    class="tab-btn"
+                    id="v-pills-profile-tab"
+                    data-toggle="pill"
+                    href="#v-pills-profile"
+                    role="tab"
+                    aria-controls="v-pills-profile"
+                    aria-selected="false"
+                    ><img
+                      class="img-icon"
+                      src="./images/a2.svg"
+                      alt="image..." />
+                    مد و پوشاک
+                    <i class="fa fa-angle-left"></i
+                  ></a>
+                  <a
+                    class="tab-btn"
+                    id="v-pills-messages-tab"
+                    data-toggle="pill"
+                    href="#v-pills-messages"
+                    role="tab"
+                    aria-controls="v-pills-messages"
+                    aria-selected="false"
+                    ><img
+                      class="img-icon"
+                      src="./images/a3.svg"
+                      alt="image..." />
+                    خانه و آشپزخانه
+                    <i class="fa fa-angle-left"></i
+                  ></a>
+                  <a
+                    class="tab-btn"
+                    id="v-pills-settings-tab"
+                    data-toggle="pill"
+                    href="#v-pills-settings"
+                    role="tab"
+                    aria-controls="v-pills-settings"
+                    aria-selected="false"
+                    ><img
+                      class="img-icon"
+                      src="./images/a4.svg"
+                      alt="image..." />
+                    صنایع دستی
+                    <i class="fa fa-angle-left"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-6 col-sm-9 tab-content" id="v-pills-tabContent">
+                <div class="container-fluid">
+                  <div
+                    class="row tab-pane fade show active"
+                    id="v-pills-home"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-home-tab"
+                  >
+                    <div class="col-sm-3 border-right">
+                      <ul>
+                        <a href="#" class="head-tab-style"> خوار و بار </a>
+                        <a href="#" class="list-group-item-style"> برنج </a>
+                        <a href="#" class="list-group-item-style"
+                          >حبوبات و سویا</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >روغن خوراکی</a
+                        >
+                        <a href="#" class="list-group-item-style">قند و شکر</a>
+                        <a href="#" class="list-group-item-style">ماکارونی</a>
+                        <a href="#" class="list-group-item-style">غلات</a>
+                      </ul>
+                      <ul>
+                        <a href="#" class="head-tab-style"> خوار و بار </a>
+                        <a href="#" class="list-group-item-style"> برنج </a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">آجیل و خشکبار</a>
+                        <a href="#" class="list-group-item-style"> برنج </a>
+                        <a href="#" class="list-group-item-style"
+                          >حبوبات و سویا</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >روغن خوراکی</a
+                        >
+                        <a href="#" class="list-group-item-style">قند و شکر</a>
+                        <a href="#" class="list-group-item-style">ماکارونی</a>
+                        <a href="#" class="list-group-item-style">غلات</a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">تنقلات و شیرینی</a>
+                        <a href="#" class="list-group-item-style"> برنج </a>
+                        <a href="#" class="list-group-item-style"
+                          >حبوبات و سویا</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >روغن خوراکی</a
+                        >
+                        <a href="#" class="list-group-item-style">قند و شکر</a>
+                        <a href="#" class="list-group-item-style">ماکارونی</a>
+                        <a href="#" class="list-group-item-style">غلات</a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">ادویه و چاشنی</a>
+                        <a href="#" class="list-group-item-style"> برنج </a>
+                        <a href="#" class="list-group-item-style"
+                          >حبوبات و سویا</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >روغن خوراکی</a
+                        >
+                        <a href="#" class="list-group-item-style">قند و شکر</a>
+                        <a href="#" class="list-group-item-style">ماکارونی</a>
+                        <a href="#" class="list-group-item-style">غلات</a>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="row tab-pane fade top-style"
+                    id="v-pills-profile"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-profile-tab"
+                  >
+                    <div class="col-sm-3 border-right">
+                      <ul>
+                        <a href="#" class="head-tab-style">زنانه</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوز، پیراهن و شومیز زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >تاپ و تیشرت زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >باس زیر زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لباس راحتی و خواب زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >شلوار و سرهمی زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >مانتو و تونیک</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">مردانه</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوز، پیراهن و شومیز زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >تاپ و تیشرت زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >باس زیر زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لباس راحتی و خواب زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >شلوار و سرهمی زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >مانتو و تونیک</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">دخترانه</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوز، پیراهن و شومیز زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >تاپ و تیشرت زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >باس زیر زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لباس راحتی و خواب زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >شلوار و سرهمی زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >مانتو و تونیک</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">پسرانه</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوز، پیراهن و شومیز زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >تاپ و تیشرت زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >باس زیر زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لباس راحتی و خواب زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >شلوار و سرهمی زنانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >مانتو و تونیک</a
+                        >
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="row tab-pane fade top-style"
+                    id="v-pills-messages"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-messages-tab"
+                  >
+                    <div class="col-sm-3 border-right">
+                      <ul>
+                        <a href="#" class="head-tab-style">لوازم آشپزخانه</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوازم پخت و پز</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف آشپزخانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لوازم تهیه و سرو چای</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرو و پذیرایی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >فلاسک، کلمن و ماگ</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ابزار قنادی</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">لوازم برقی</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوازم پخت و پز</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف آشپزخانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لوازم تهیه و سرو چای</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرو و پذیرایی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >فلاسک، کلمن و ماگ</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ابزار قنادی</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">دکوری</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوازم پخت و پز</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف آشپزخانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لوازم تهیه و سرو چای</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرو و پذیرایی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >فلاسک، کلمن و ماگ</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ابزار قنادی</a
+                        >
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">میز و صندلی</a>
+                        <a href="#" class="list-group-item-style"
+                          >لوازم پخت و پز</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف آشپزخانه</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >لوازم تهیه و سرو چای</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرو و پذیرایی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >فلاسک، کلمن و ماگ</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ابزار قنادی</a
+                        >
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="row tab-pane fade top-style"
+                    id="v-pills-settings"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-settings-tab"
+                  >
+                    <div class="col-sm-3 border-right">
+                      <ul>
+                        <a href="#" class="head-tab-style">سفال و کاشی</a>
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style">ظروف سفالی</a>
+                        <a href="#" class="list-group-item-style"
+                          >دکوراتیو سفالی و سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >کاشی و سرامیک</a
+                        >
+                        <a href="#" class="list-group-item-style">سرامیک</a>
+                        <a href="#" class="list-group-item-style">کاشی</a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style"
+                          >صنایع دستی پارچه ای</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style">ظروف سفالی</a>
+                        <a href="#" class="list-group-item-style"
+                          >دکوراتیو سفالی و سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >کاشی و سرامیک</a
+                        >
+                        <a href="#" class="list-group-item-style">سرامیک</a>
+                        <a href="#" class="list-group-item-style">کاشی</a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">صنایع دستی فلزی</a>
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style">ظروف سفالی</a>
+                        <a href="#" class="list-group-item-style"
+                          >دکوراتیو سفالی و سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >کاشی و سرامیک</a
+                        >
+                        <a href="#" class="list-group-item-style">سرامیک</a>
+                        <a href="#" class="list-group-item-style">کاشی</a>
+                      </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul>
+                        <a href="#" class="head-tab-style">صنایع دستی سنگی</a>
+                        <a href="#" class="list-group-item-style"
+                          >ظروف سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style">ظروف سفالی</a>
+                        <a href="#" class="list-group-item-style"
+                          >دکوراتیو سفالی و سرامیکی</a
+                        >
+                        <a href="#" class="list-group-item-style"
+                          >کاشی و سرامیک</a
+                        >
+                        <a href="#" class="list-group-item-style">سرامیک</a>
+                        <a href="#" class="list-group-item-style">کاشی</a>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-nav-mega" href="./pageApp.html">نصب اپ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-nav-mega" href="./landing.html">غرفه دارشو</a>
+        </li>
+      </ul>
+    </div>
+    <!-- end navbar -->
+
+    <!-- start content -->
+    <div class="container-fluid" id="mobile">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="app-content-right">
+            <p class="head-app-d">دانلود اپلیکیشن باسلام</p>
+            <p class="app-text-p">
+              برای دریافت لینک دانلود مستقیم اپلیکیشن باسلام،
+            </p>
+            <p class="app-text-p">
+              شماره موبایل خود را وارد کنید یا تصویر روبه‌رو را اسکن کنید.
+            </p>
+            <div class="app-content-main">
+              <div class="input-app">
+                <div class="input-app-row">
+                  <input
+                    type="text"
+                    class="footer-form-app"
+                    placeholder="شماره موبایل"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                  <button class="btn btn-send-footer-app" type="button">
+                    ارسال لینک دانلود
+                  </button>
+                </div>
+
+                <div class="d-flex justify-content-center py-4">
+                  <img class="px-2" src="./images/bazzar.png" alt="bazar..." />
+                  <img class="px-2" src="./images/play.png" alt="bazar..." />
+                  <img class="px-2" src="./images/myket.png" alt="bazar..." />
+                </div>
+              </div>
+              <div class="app-code">
+                <img class="qr-code" src="./images/yAcw276.png" alt="code..." />
+              </div>
+            </div>
+
+            <p class="app-text-p">
+              می‌خواهید غرفه‌دار شوید؟<a href="#"
+                >اپلیکیشن «غرفه من» را دانلود کنید</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="img-content-app">
+            <img src="./images/wq-mobile.png" alt="app..." />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-white">
+      <div class="row">
+        <div class="main-app">
+          <img class="main-app-img" src="./images/red-logo.png" alt="logo..." />
+          <p class="head-app-main">اپلیکیشن باسلام</p>
+          <p class="main-app-text">برخی از امکانات اپلیکیشن باسلام</p>
+        </div>
+      </div>
+      <div class="row row-main-two">
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon1.png" alt="image" />
+          <p class="main-text-icon">
+            گفت‌و‌گوی مستقیم با تولیدکننده و بی‌واسطه
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon2.png" alt="image" />
+          <p class="main-text-icon">محصولات متنوع همراه با تخفیف‌های خوب</p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon3.png" alt="image" />
+          <p class="main-text-icon">نظرات و استفاده از تجربه‌های دیگران</p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon4.png" alt="image" />
+          <p class="main-text-icon">مقایسه راحت در میان محصولات مشابه</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-white">
+      <div class="row">
+        <div class="main-app">
+          <img
+            class="main-app-img"
+            src="./images/blue-logo.png"
+            alt="logo..."
+          />
+          <p class="head-app-main-blue">اپلیکیشن باسلام</p>
+          <p class="main-app-text">برخی از امکانات اپلیکیشن باسلام</p>
+        </div>
+      </div>
+      <div class="row row-main-two">
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon1.png" alt="image" />
+          <p class="main-text-icon">
+            گفت‌و‌گوی مستقیم با تولیدکننده و بی‌واسطه
+          </p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon2.png" alt="image" />
+          <p class="main-text-icon">محصولات متنوع همراه با تخفیف‌های خوب</p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon3.png" alt="image" />
+          <p class="main-text-icon">نظرات و استفاده از تجربه‌های دیگران</p>
+        </div>
+        <div class="col-12 col-lg-6 column-style mb-5">
+          <img src="./images/main-icon4.png" alt="image" />
+          <p class="main-text-icon">مقایسه راحت در میان محصولات مشابه</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-white">
+      <div class="row py-5">
+        <div class="input-app-row-end">
+          <input
+            type="text"
+            class="footer-form-app-end"
+            placeholder="شماره موبایل"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <button class="btn btn-send-footer-app-end" type="button">
+            ارسال لینک دانلود
+          </button>
+        </div>
+        <div class="d-flex justify-content-center flex-wrap py-4">
+          <img
+            class="app-main-icon-end"
+            src="./images/bazzar.png"
+            alt="bazar..."
+          />
+          <img
+            class="app-main-icon-end"
+            src="./images/play.png"
+            alt="bazar..."
+          />
+          <img
+            class="app-main-icon-end"
+            src="./images/myket.png"
+            alt="bazar..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- end content -->
+
+    <!-- start footer -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 mb-5">
+            <div class="row">
+              <div class="col-md-6 d-flex flex-row">
+                <div class="col-6 content-footer-icon">
+                  <img
+                    class="banner-img-footer"
+                    src="./images/icon-footer4.svg"
+                    alt="banner..."
+                  />
+                  <span class="text-icon-footer">پرداخت از درگاه بانکی</span>
+                </div>
+                <div class="col-6 content-footer-icon">
+                  <img
+                    class="banner-img-footer"
+                    src="./images/icon-footer3.svg"
+                    alt="banner..."
+                  />
+                  <span class="text-icon-footer"> ضمانت بازگشت پول</span>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex flex-row">
+                <div class="col-6 content-footer-icon">
+                  <img
+                    class="banner-img-footer"
+                    src="./images/icon-footer2.svg"
+                    alt="banner..."
+                  />
+                  <span class="text-icon-footer">ارتباط مستقیم با آدم ها</span>
+                </div>
+                <div class="col-6 content-footer-icon">
+                  <img
+                    class="banner-img-footer"
+                    src="./images/icon-footer1.svg"
+                    alt="banner..."
+                  />
+                  <span class="text-icon-footer">پشتیبانب آنلاین و تلفنی</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-5">
+            <h3 class="head-app">نصب اپلیکیشن باسلام</h3>
+            <div class="img-head-app">
+              <img class="img-app" src="./images/bazzar.png" alt="bazar..." />
+              <img class="img-app" src="./images/play.png" alt="bazar..." />
+              <img class="img-app" src="./images/myket.png" alt="bazar..." />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr" />
+      <div class="container-fluid my-5">
+        <div class="row">
+          <div class="col-lg-8 my-5">
+            <div class="row" id="list">
+              <div class="col-3">
+                <img src="./images/basalam-oreng.svg" alt="basalam..." />
+              </div>
+              <div class="col-3">
+                <ul class="list-group text-right">
+                  <li class="list-group-item border-0 head-list-footer">
+                    پشتیبانی
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    تماس باما
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    پیگیری سفارشات
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    پاسخ به سوالات
+                  </li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul class="list-group text-right">
+                  <li class="list-group-item border-0 head-list-footer">
+                    باسلام
+                  </li>
+                  <li
+                    class="list-group-item text-footer-list text-footer-list border-0"
+                  >
+                    تماس باما
+                  </li>
+                  <li
+                    class="list-group-item text-footer-list text-footer-list border-0"
+                  >
+                    پیگیری سفارشات
+                  </li>
+                  <li
+                    class="list-group-item text-footer-list text-footer-list border-0"
+                  >
+                    پاسخ به سوالات
+                  </li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul class="list-group text-right">
+                  <li class="list-group-item border-0 head-list-footer">
+                    خرید و فروش
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    تماس باما
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    پیگیری سفارشات
+                  </li>
+                  <li class="list-group-item text-footer-list border-0">
+                    پاسخ به سوالات
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row accord-row-style" id="accord">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item accordion-item-style">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button
+                      class="tab-angle-btn"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne"
+                    >
+                      پشتیبانی
+                      <i class="fa fa-angle-down" id="down"></i>
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne"
+                  >
+                    <div class="accordion-body">
+                      <ul class="list-group text-right">
+                        <li class="list-group-item text-footer-list border-0">
+                          تماس باما
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پیگیری سفارشات
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پاسخ به سوالات
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item accordion-item-style">
+                  <h2
+                    class="accordion-header bg-white"
+                    id="panelsStayOpen-headingTwo"
+                  >
+                    <button
+                      class="tab-angle-btn collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseTwo"
+                    >
+                      باسلام
+                      <i class="fa fa-angle-down" id="down"></i>
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo"
+                  >
+                    <div class="accordion-body">
+                      <ul class="list-group text-right">
+                        <li class="list-group-item text-footer-list border-0">
+                          تماس باما
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پیگیری سفارشات
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پاسخ به سوالات
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item accordion-item-style">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button
+                      class="tab-angle-btn collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseThree"
+                    >
+                      خرید و فروش
+                      <i class="fa fa-angle-down" id="down"></i>
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree"
+                  >
+                    <div class="accordion-body">
+                      <ul class="list-group text-right">
+                        <li class="list-group-item text-footer-list border-0">
+                          تماس باما
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پیگیری سفارشات
+                        </li>
+                        <li class="list-group-item text-footer-list border-0">
+                          پاسخ به سوالات
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-5">
+            <p class="head-form-footer text-right pt-3">
+              ایمیل خود را وارد کنید تا از تخفیفات با خبر شوید
+            </p>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control footer-form"
+                placeholder="ایمیل"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <button class="btn btn-send-footer" type="button">ارسال</button>
+            </div>
+            <div class="end-form">
+              <p class="head-form-footer text-right">
+                مارا در شبکه های اجتمایی دنبال کنید
+              </p>
+              <div class="icon-end-footer">
+                <i class="fa fa-instagram ml-2"></i>
+                <i class="fa fa-linkedin-square"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="hr" />
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column order-md-1 order-2 mb-5">
+            <h5 class="title">باسلام، بازار بی‌مرز</h5>
+            <p class="text">
+              یک بازار برای خرید و فروش محصولات مختلف با کیفیت و قیمت‌های
+              متفاوته. باسلام مجموعه‌ای از بازارهای بزرگ همه‌ی شهرهاست اما
+              اینترنتی. بازار تجریش و بازار بزرگ سیستان در باسلام کنار هم چیده
+              شده. این‌جا با فروشندها و خریدارهای واقعی سروکار داری؛ نه انبارهای
+              درندشت و بزرگ، چون باسلام بازار آدم‌هاست. هر محصولی که دنبالش
+              بگردی توی این بازار هم عمده هم تکی در انواع مختلف و از شهرهای
+              مختلف پیدا می‌شه. تو باسلام راه ارتباط با همه آدم‌ها مثل هر بازار
+              دیگه بازه. تو این بازار از غرفه‌دارها خرید می‌کنی. این غرفه‌دارها
+              از هر جایی از ایران حتی از هر جایی از جهان دارن محصولشون رو به شما
+              می‌رسونن. امتیاز هر محصول و تجربه‌ای که مشتری‌های دیگه پای هر
+              محصول ثبت کردن و یا گفت‌وگو با خود غرفه‌دارها و یا مشورت با
+              خریدارهای قبلی بهت کمک می‌کنه که بتونی محصول بهتری رو انتخاب کنی.
+              فروش در باسلام هم سخت نیست. کافیه غرفه‌ات رو ثبت کنی و محصولت رو
+              درون غرفه‌ات بچینی تا مشتری‌ها پیدات کنن و بی‌مرز ازت خرید کنن.
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body border-0">
+                <h5 class="title">تو این بازار دنبال هر چی بگردی پیدا می‌شه</h5>
+                <p class="text">
+                  یک بازار برای خرید و فروش محصولات مختلف با کیفیت و قیمت‌های
+                  متفاوته. باسلام مجموعه‌ای از بازارهای بزرگ همه‌ی شهرهاست اما
+                  اینترنتی. بازار تجریش و بازار بزرگ سیستان در باسلام کنار هم
+                  چیده شده. این‌جا با فروشندها و خریدارهای واقعی سروکار داری؛ نه
+                  انبارهای درندشت و بزرگ، چون باسلام بازار آدم‌هاست. هر محصولی
+                  که دنبالش بگردی توی این بازار هم عمده هم تکی در انواع مختلف و
+                  از شهرهای مختلف پیدا می‌شه. تو باسلام راه ارتباط با همه آدم‌ها
+                  مثل هر بازار دیگه بازه. تو این بازار از غرفه‌دارها خرید
+                  می‌کنی. این غرفه‌دارها از هر جایی از ایران حتی از هر جایی از
+                  جهان دارن محصولشون رو به شما می‌رسونن. امتیاز هر محصول و
+                  تجربه‌ای که مشتری‌های دیگه پای هر محصول ثبت کردن و یا گفت‌وگو
+                  با خود غرفه‌دارها و یا مشورت با خریدارهای قبلی بهت کمک می‌کنه
+                  که بتونی محصول بهتری رو انتخاب کنی. فروش در باسلام هم سخت
+                  نیست. کافیه غرفه‌ات رو ثبت کنی و محصولت رو درون غرفه‌ات بچینی
+                  تا مشتری‌ها پیدات کنن و بی‌مرز ازت خرید کنن.
+                </p>
+                <h5 class="title">
+                  از لوازم آرایشی تا صنایع دستی تو این بازار پیدا می‌شه
+                </h5>
+                <p class="text">
+                  یک بازار برای خرید و فروش محصولات مختلف با کیفیت و قیمت‌های
+                  متفاوته. باسلام مجموعه‌ای از بازارهای بزرگ همه‌ی شهرهاست اما
+                  اینترنتی. بازار تجریش و بازار بزرگ سیستان در باسلام کنار هم
+                  چیده شده. این‌جا با فروشندها و خریدارهای واقعی سروکار داری؛ نه
+                  انبارهای درندشت و بزرگ، چون باسلام بازار آدم‌هاست. هر محصولی
+                  که دنبالش بگردی توی این بازار هم عمده هم تکی در انواع مختلف و
+                  از شهرهای مختلف پیدا می‌شه. تو باسلام راه ارتباط با همه آدم‌ها
+                  مثل هر بازار دیگه بازه. تو این بازار از غرفه‌دارها خرید
+                  می‌کنی. این غرفه‌دارها از هر جایی از ایران حتی از هر جایی از
+                  جهان دارن محصولشون رو به شما می‌رسونن. امتیاز هر محصول و
+                  تجربه‌ای که مشتری‌های دیگه پای هر محصول ثبت کردن و یا گفت‌وگو
+                  با خود غرفه‌دارها و یا مشورت با خریدارهای قبلی بهت کمک می‌کنه
+                  که بتونی محصول بهتری رو انتخاب کنی. فروش در باسلام هم سخت
+                  نیست. کافیه غرفه‌ات رو ثبت کنی و محصولت رو درون غرفه‌ات بچینی
+                  تا مشتری‌ها پیدات کنن و بی‌مرز ازت خرید کنن.
+                </p>
+                <h5 class="title">باسلام، بازار بی‌مرز</h5>
+                <p class="text">
+                  یک بازار برای خرید و فروش محصولات مختلف با کیفیت و قیمت‌های
+                  متفاوته. باسلام مجموعه‌ای از بازارهای بزرگ همه‌ی شهرهاست اما
+                  اینترنتی. بازار تجریش و بازار بزرگ سیستان در باسلام کنار هم
+                  چیده شده. این‌جا با فروشندها و خریدارهای واقعی سروکار داری؛ نه
+                  انبارهای درندشت و بزرگ، چون باسلام بازار آدم‌هاست. هر محصولی
+                  که دنبالش بگردی توی این بازار هم عمده هم تکی در انواع مختلف و
+                  از شهرهای مختلف پیدا می‌شه. تو باسلام راه ارتباط با همه آدم‌ها
+                  مثل هر بازار دیگه بازه. تو این بازار از غرفه‌دارها خرید
+                  می‌کنی. این غرفه‌دارها از هر جایی از ایران حتی از هر جایی از
+                  جهان دارن محصولشون رو به شما می‌رسونن. امتیاز هر محصول و
+                  تجربه‌ای که مشتری‌های دیگه پای هر محصول ثبت کردن و یا گفت‌وگو
+                  با خود غرفه‌دارها و یا مشورت با خریدارهای قبلی بهت کمک می‌کنه
+                  که بتونی محصول بهتری رو انتخاب کنی. فروش در باسلام هم سخت
+                  نیست. کافیه غرفه‌ات رو ثبت کنی و محصولت رو درون غرفه‌ات بچینی
+                  تا مشتری‌ها پیدات کنن و بی‌مرز ازت خرید کنن.
+                </p>
+              </div>
+            </div>
+            <p id="btnend" class="btnend">
+              <a
+                class="btn-text-end"
+                data-bs-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                نمایش بیشتر
+              </a>
+            </p>
+          </div>
+          <div class="col-md-6 nemad-content d-flex order-md-2 order-1 mb-5">
+            <img class="nemad-logo" src="./images/jXX8Yz1.svg" alt="logo..." />
+            <img class="nemad-logo" src="./images/Itxi.png" alt="logo..." />
+            <img class="nemad-logo" src="./images/XQY.png" alt="logo..." />
+            <img class="nemad-logo" src="./images/logo.png" alt="logo..." />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="container-fluid content-copy">
+      <p class="title-copy">همه‌ حقوق برای بازار «باسلام» است. © 1401</p>
+    </div>
+    <!-- end footer -->
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidepanel").style.width = "300px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./pageApp.js"></script>
+  </body>
+</html>
